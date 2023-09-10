@@ -1,20 +1,25 @@
 package com.stevebitzel;
 
+import java.io.*;
 import java.util.Scanner;
 
 
 public class EchoDriver {
 
     public static void run() {
-        Scanner scanner = new Scanner(System.in);
+        run(System.in, System.out); //NOSONAR
+    }
+
+    public static void run(InputStream in, PrintStream out) {
+        Scanner scanner = new Scanner(in);
         boolean b = true;
         while(b) {
             String s = scanner.nextLine();
             if ("hello".equalsIgnoreCase(s.trim())) {
-                System.out.println("Hello, World!");
+                out.println("Hello, World!");
                 b = false;
             } else {
-                System.out.println(s);
+                out.println(s);
             }
         }
     }
