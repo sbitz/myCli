@@ -6,8 +6,31 @@ import java.util.Scanner;
 
 public class EchoDriver {
 
-    public static void run() {
-        run(System.in, System.out); //NOSONAR
+    public static void run(String[] args) {
+        InputStream input = System.in;
+        PrintStream output = System.out; // NOSONAR
+
+        for (int i = 0; i < args.length - 1; i++) {
+            if ("-in".equals(args[i])) {
+                String filename = args[++i]; // NOSONAR
+                try {
+                    input = new FileInputStream(filename); // NOSONAR
+                } catch (FileNotFoundException e) {
+                    System.err.println("File not found: " + filename); // NOSONAR
+                    System.exit(1);
+                }
+            }
+            if ("-out".equals(args[i])) {
+                String filename = args[++i]; // NOSONAR
+                try {
+                    output = new PrintStream(filename); // NOSONAR
+                } catch (FileNotFoundException e) {
+                    System.err.println("File not found: " + filename); // NOSONAR
+                    System.exit(2);
+                }
+            }
+        }
+        run(input, output);
     }
 
     public static void run(InputStream in, PrintStream out) {
@@ -24,7 +47,8 @@ public class EchoDriver {
         }
     }
 
+
     public static void main(String[] args) {
-        run();
+        run(args);
     }
 }

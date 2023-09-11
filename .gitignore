@@ -1,3 +1,5 @@
+src/test/resources/output1.txt
+
 target/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
