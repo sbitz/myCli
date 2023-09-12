@@ -7,9 +7,11 @@ import java.util.Scanner;
 public class EchoDriver {
 
     public static void run(String[] args) {
+
         InputStream input = System.in;
         PrintStream output = System.out; // NOSONAR
 
+        output.println("Hello. What do you have to say?");
         for (int i = 0; i < args.length - 1; i++) {
             if ("-in".equals(args[i])) {
                 String filename = args[++i]; // NOSONAR
