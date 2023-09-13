@@ -1,4 +1,4 @@
-package com.stevebitzel;
+package com.sbitz;
 
 
 public class Main {

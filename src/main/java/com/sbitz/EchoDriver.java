@@ -1,4 +1,4 @@
-package com.stevebitzel;
+package com.sbitz;
 
 import java.io.*;
 import java.util.Scanner;
