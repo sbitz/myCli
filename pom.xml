@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.stevebitzel</groupId>
+    <groupId>com.sbitz</groupId>
     <artifactId>myCli</artifactId>
     <version>1.0</version>
 
@@ -20,19 +20,5 @@
             <artifactId>sqlite-jdbc</artifactId>
             <version>3.43.0.0</version>
         </dependency>
-        <dependency>
-            <groupId>com.stevebitzel</groupId>
-            <artifactId>myCliPlugin1</artifactId>
-            <version>1.0</version>
-            <scope>provided</scope>
-        </dependency>
     </dependencies>
-    <build><!--
-        <resources>
-            <resource>
-                <directory>/src/main/resources/META-INF/services</directory>
-                <targetPath>/target/classes/resources/META-INF/services</targetPath>
-            </resource>
-        </resources>-->
-    </build>
 </project>
