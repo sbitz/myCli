@@ -42,3 +42,11 @@ Change the input to use a file with the `-in` argument, and redirect output with
 ```bash
 myCli -in $IN_FILE -out $OUT_FILE
 ```
+
+## Incorporating plugins
+To add a plugin...
+
+1. Extend `com.sbitz.InputHandler` in another project.
+2. Add your plugin to the `META-INF/services/com.sbitz.InputHandler` file with your new concrete class name.
+3. Add the plugin **to the beginning** of the classpath (with `:` separator on linux, `;` on windows)
+4. The next invocation of `myCli` will read service definitions from both jars and will be available as an option to run.
